@@ -15,7 +15,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        {{ $post->body }}
+                        {{$post->body}}
                     </p>
                     <a class="card-link" href={{route('posts.show',['post' => $post])}} >
                         詳細を見る
@@ -23,16 +23,15 @@
                 </div>
                 <div class="card-footer">
                     <span class="mr-2">
-                        投稿日時
+                        投稿日時 {{ $post->created_at }}
                     </span>
                 </div>
+            </div>
             @endforeach
+                <div class="d-flex justify-content-center mb-5">
+                    {{ $posts->links() }}
+                </div>
             
-            
-            <div class="d-flex justify-content-center mb-5">
-                {{ $posts->links() }}
-            </div>
-            </div>
     </div>
     
 @endsection('content')
